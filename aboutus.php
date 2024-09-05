@@ -2,6 +2,6 @@
     require_once "load.php";
     $ObjLayouts->heading();
     $ObjMenus->main_menu();
-    $ObjContents->main_content();
+    $ObjContents->about_content();
     $ObjContents->sidebar();
     $ObjLayouts->footer();
