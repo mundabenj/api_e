@@ -1,6 +1,5 @@
 <?php
 // Class Auto Load
-
 function ClassAutoload($ClassName){
    $directories = ["forms", "processes", "structure", "tables", "global", "store"];
 
