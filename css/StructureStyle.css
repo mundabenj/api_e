@@ -24,6 +24,9 @@ body{
     background-color: azure;
 }
 
+.topnav-right{
+    float: right;
+}
 
 .footer{
     background-color: black;

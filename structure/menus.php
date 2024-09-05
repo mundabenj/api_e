@@ -9,6 +9,15 @@
                 <a href="">Our Portofio</a>
                 <a href="">Blog</a>
                 <a href="">Contact Us</a>
+                <?php $this->main_right_side_menu(); ?>
+            </div>
+<?php
+    }
+        public function main_right_side_menu(){
+?>
+            <div class="topnav-right">
+                <a href="">Sign Up</a>
+                <a href="">Sign In</a>
             </div>
 <?php
     }
