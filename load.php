@@ -21,4 +21,4 @@ spl_autoload_register('ClassAutoload');
     $ObjLayouts = new layouts();
     $ObjMenus = new menus();
     $ObjContents = new contents();
-    $conn = new dbConnection(DBTYPE, HOSTNAME, DBPORT, HOSTUSER, HOSTPASS, DBNAME);
+   //  $conn = new dbConnection(DBTYPE, HOSTNAME, DBPORT, HOSTUSER, HOSTPASS, DBNAME);
