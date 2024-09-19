@@ -80,25 +80,6 @@ CREATE TABLE IF NOT EXISTS `users` (
   KEY `roleId` (`roleId`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Constraints for dumped tables
---
-
---
--- Constraints for table `gender`
---
-ALTER TABLE `gender`
-  ADD CONSTRAINT `gender_ibfk_1` FOREIGN KEY (`genderId`) REFERENCES `users` (`genderId`) ON DELETE NO ACTION ON UPDATE NO ACTION;
-
---
--- Constraints for table `roles`
---
-ALTER TABLE `roles`
-  ADD CONSTRAINT `roles_ibfk_1` FOREIGN KEY (`roleId`) REFERENCES `users` (`roleId`) ON DELETE NO ACTION ON UPDATE NO ACTION;
-
---
--- Constraints for table `users`
---
 ALTER TABLE `users`
   ADD CONSTRAINT `users_ibfk_1` FOREIGN KEY (`genderId`) REFERENCES `gender` (`genderId`) ON DELETE NO ACTION,
   ADD CONSTRAINT `users_ibfk_2` FOREIGN KEY (`roleId`) REFERENCES `roles` (`roleId`) ON DELETE NO ACTION;

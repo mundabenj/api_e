@@ -45,4 +45,29 @@ class dbConnection{
                 break;
         }
     }
+
+    public function insert($table, $data){
+        ksort($data);
+        $fielDetails = NULL;
+        $fieldNames = implode('`, `', array_keys($data));
+        $fieldValues = implode("', '", array_values($data));
+        $sth = "INSERT INTO $table (`$fieldNames`) VALUES ('$fieldValues')";
+        
+        switch($this->db_type){
+            case 'MySQLi' :
+                if($this->connection->query($sth) === TRUE){
+                    return TRUE;
+                }else{
+                    return "Error: " . $sth . "<br>" . $this->connection->error;
+                }
+                break;
+            case 'PDO' :
+                try{
+                    $this->connection->exec($sth);
+                    return TRUE;
+                  } catch(PDOException $e) {
+                    return $sth . "<br>" . $e->getMessage();
+                  }
+        }
+    }
 }
