@@ -2,6 +2,7 @@
     require_once "load.php";
     $ObjLayouts->heading();
     $ObjMenus->main_menu();
-    $ObjContents->main_content();
+    $ObjLayouts->banner();
+    $Objforms->sign_up_form();
     $ObjContents->sidebar();
     $ObjLayouts->footer();
