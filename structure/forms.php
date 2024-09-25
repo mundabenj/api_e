@@ -1,10 +1,15 @@
 <?php
 class forms{
-    public function sign_up_form(){
+    public function sign_up_form($ObjGlob){
         ?>
             <div class="row align-items-md-stretch">
             <div class="col-md-8">
                 <form action="" method="post" enctype="multipart/form-data">
+                    <?php 
+                    print $ObjGlob->getMsg('msg'); 
+
+                    $err = $ObjGlob->getMsg('errors');
+                     ?>
                     <div class="mb-3">
                         <label for="fullname" class="form-label">Fullname: </label>
                         <input type="text" name="fullname" class="form-control form-control-lg" id="fullname" placeholder="Enter your fullname" maxlength="50" autofocus>
@@ -12,6 +17,7 @@ class forms{
                     <div class="mb-3">
                         <label for="email" class="form-label">Email address: </label>
                         <input type="email" name="email_address" class="form-control form-control-lg" id="email" placeholder="Enter your email" maxlength="50">
+                        <?php print (isset($err["email_format_err"])) ? $err["email_format_err"] : ''; ?>
                     </div>
                     <div class="mb-3">
                         <label for="username" class="form-label">Username: </label>

@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 require "includes/constants.php";
 require "includes/dbConnection.php";
 
@@ -24,7 +24,8 @@ spl_autoload_register('ClassAutoload');
     $Objforms = new forms();
     $conn = new dbConnection(DBTYPE, HOSTNAME, DBPORT, HOSTUSER, HOSTPASS, DBNAME);
 
-
 // Creating process intances
+   $ObjGlob = new fncs();
    $ObjAuth = new auth();
-   $ObjAuth->signup($conn);
+
+   $ObjAuth->signup($conn, $ObjGlob);
