@@ -30,9 +30,6 @@ if(!filter_var($email_address, FILTER_VALIDATE_EMAIL)){
     $errors['email_format_err'] = 'Wrong email format';
 }
 
-// verify that the email domain is authorized (@strathmore.edu, @gmail.com, @yahoo.com, @mada.co.ke) and not (@yanky.net)
-$conf['valid_domains'] = ["strathmore.edu", "gmail.com", "yahoo.com", "mada.co.ke", "outlook.com", "STRATHMORE.EDU", "GMAIL.COM", "YAHOO.COM", "MADA.CO.KE", "OUTLOOK.COM"];
-
 $arr_email_address = explode("@", $email_address);
 $spot_dom = end($arr_email_address);
 $spot_user = reset($arr_email_address);
@@ -55,8 +52,7 @@ if ($spot_username_res > $exist_count){
 
 // Verify if username contain letters only
 if (!ctype_alpha($username)) {
-    $errors['usernameLetters_err'] = "Invalid username format. Username must contain letters only";
-    $ObjGlob->setMsg('errors', $errors, 'invalid');
+    $errors['usernameLetters_err'] = "Invalid username format. Username must contain letters only without space";
 }
 
 // Verify that the password is identical to the repeat passsword
@@ -67,11 +63,13 @@ if(!count($errors)){
 // ===================================
 // Send email verification with an OTP (OTC)
 
-
             $cols = ['fullname', 'email', 'username'];
             $vals = [$fullname, $email_address, $username];
+
             $data = array_combine($cols, $vals);
+
             $insert = $conn->insert('users', $data);
+
             if($insert === TRUE){
 
                 $replacements = array('fullname' => $fullname, 'email_address' =>
