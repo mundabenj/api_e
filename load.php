@@ -18,6 +18,9 @@ function ClassAutoload($ClassName){
 }
 spl_autoload_register('ClassAutoload');
 
+$ObjGlob = new fncs();
+$ObjSendMail = new SendMail();
+
 // Creating instances of all classes
     $ObjLayouts = new layouts();
     $ObjMenus = new menus();
@@ -25,8 +28,7 @@ spl_autoload_register('ClassAutoload');
     $Objforms = new forms();
     $conn = new dbConnection(DBTYPE, HOSTNAME, DBPORT, HOSTUSER, HOSTPASS, DBNAME);
 
-// Creating process intances
-   $ObjGlob = new fncs();
-   $ObjAuth = new auth();
+// Create process instances
 
-   $ObjAuth->signup($conn, $ObjGlob);
+$ObjAuth = new auth();
+$ObjAuth->signup($conn, $ObjGlob, $ObjSendMail, $lang, $conf);
