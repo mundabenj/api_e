@@ -33,4 +33,25 @@ class forms{
             </div>
         <?php
     }
+    public function verify_code_form($ObjGlob){
+        ?>
+            <div class="row align-items-md-stretch">
+            <div class="col-md-8">
+            <h2>Verify Code</h2>
+            <?php
+            print $ObjGlob->getMsg('msg');
+            $err = $ObjGlob->getMsg('errors');
+            ?>
+            <form action="<?php print basename($_SERVER["PHP_SELF"]); ?>" method="POST" enctype="multipart/form-data">
+            <div class="mb-3">
+                    <label for="ver_code" class="form-label">Verification Code:</label>
+					<input type="number" name="ver_code" class="form-control form-control-lg" maxlength="5" min="10000" max="99999" id="ver_code" placeholder="Enter your verification code" <?php print (isset($_SESSION["ver_code"])) ? 'value="'.$_SESSION["ver_code"].'"'  : ''; unset($_SESSION["ver_code"]); ?> >
+                    <?php print (isset($err['Not_numeric'])) ? "<span class='invalid'>" . $err['Not_numeric'] . "</span>" : '' ; ?>
+                    <?php print (isset($err['invalid_len'])) ? "<span class='invalid'>" . $err['invalid_len'] . "</span>" : '' ; ?>
+                </div>
+                <button type="submit" name="verify_code" class="btn btn-primary">Verify Code</button>
+              </form>
+            </div>
+        <?php
+    }
 }

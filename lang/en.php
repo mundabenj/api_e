@@ -15,6 +15,8 @@ In order to use this account you need to <a href='" . $conf['site_url'] . "/veri
 
 Or user unique code <h1>{{verification_code}}</h1>
 
+Unique codes expire after 24 hours.
+
 Regards,
 Systems Admin
 {{site_full_name}}
