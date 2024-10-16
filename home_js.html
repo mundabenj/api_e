@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title></title>
+	<meta charset="UTF-8">
+	<meta name="description" content="">
+</head>
+<body>
+<p>Hello World!</p>
+
+<button onclick=" document.getElementById('MyImg').src='images/bulb_on.png'">Turn On</button>
+
+<img src="images/bulb.png" alt="" border="0" id="MyImg" width="50px" height="" />
+
+<button onclick=" document.getElementById('MyImg').src='images/bulb_off.png'">Turn Off</button>
+
+<p id="demo"></p>
+
+<!-- //JS Display possibilities -->
+
+<!-- Possibility 1 -->
+<script>
+ document.getElementById("demo").innerHTML = "Hello JS";
+ 
+ document.getElementById("demo").style.fontSize = "35px";
+ 
+ document.getElementById("demo").style.display = "none";
+</script>
+
+<br>
+<br>
+<!-- Possibility 2 -->
+<script>
+	document.write(5 + 9);
+</script>
+
+<!-- Possibility 3 -->
+<br>
+<button onclick = 'document.write(24 + 26)'> Compute</button>
+<br>
+<br>
+
+<!-- Possibility 4 -->
+<script>
+<!-- window.alert('Connection successful!!'); -->
+</script>
+
+<br>
+<br>
+
+<!-- Possibility 5 -->
+<a href="#" onclick='return confirm("Are you sure?");'>Delete</a>
+
+<br>
+<br>
+<!-- Possibility 6 -->
+
+<script>
+	console.log(9 * 5);
+</script>
+
+
+<script>
+	var age = 13;
+	let continent = 'Africa';
+	const  course = 'ICS';
+	
+	document.write('I am ' + age + ' I live in ' + continent + ' and I study ' + course + '.');
+</script>
+
+
+<br>
+<br>
+<a href="#" onclick='MyFunc()'>Click Here</a>
+<p id='tictac'></p>
+
+<script src='js/script.js'></script>
+</body>
+</html>
