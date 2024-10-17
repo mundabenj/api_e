@@ -5,12 +5,12 @@
 	<meta charset="UTF-8">
 	<meta name="description" content="">
 </head>
-<body>
+<body onload="startTime()">
 <p>Hello World!</p>
 
 <button onclick=" document.getElementById('MyImg').src='images/bulb_on.png'">Turn On</button>
 
-<img src="images/bulb.png" alt="" border="0" id="MyImg" width="50px" height="" />
+<img src="images/bulb.png" alt="" id="MyImg" width="50px" height="" />
 
 <button onclick=" document.getElementById('MyImg').src='images/bulb_off.png'">Turn Off</button>
 
@@ -61,19 +61,58 @@
 
 
 <script>
-	var age = 13;
+	var age = 20;
 	let continent = 'Africa';
 	const  course = 'ICS';
-	
-	document.write('I am ' + age + ' I live in ' + continent + ' and I study ' + course + '.');
-</script>
+	if(age > 17)
+		document.write('I am ' + age + ' I live in ' + continent + ' and I study ' + course + '. I am an adult');
+	else
+		document.write('I am ' + age + ' I live in ' + continent + ' and I study ' + course + '. I am NOT an adult');
 
+</script>
 
 <br>
 <br>
 <a href="#" onclick='MyFunc()'>Click Here</a>
 <p id='tictac'></p>
 
+<br>
+<br>
+
+<script>
+	let town = "Nairobi City";
+	document.write(town.length);
+</script>
+
+
+<br>
+<br>
+
+<script>
+	// const username  = prompt('What is your name?');
+
+	// if(username.length > 6){
+	// 	const message = `Hello ${username} <br> I am happy to introduce you to JS.`;
+	// 	document.write(message);
+	// }else{
+	// 	document.write(username + ' must have more than 6 characters.');
+	// }
+</script>
+<br>
+<br>
+
+<script>
+	function calcSum(r, t){
+		return (r + t)*2;
+	}
+
+document.write(calcSum(4, 6));
+</script>
+
+
+<p id="tmr"></p>
+
 <script src='js/script.js'></script>
+<script src='js/timer_t.js'></script>
 </body>
 </html>
